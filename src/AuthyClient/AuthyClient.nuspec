@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0"?>
 <package >
   <metadata>
-    <id>$id$</id>
+    <id>authy-net-client</id>
     <version>$version$</version>
     <title>Authy .NET Client</title>
     <authors>David Sulpy</authors>
