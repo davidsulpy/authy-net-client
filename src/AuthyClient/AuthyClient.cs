@@ -4,7 +4,7 @@ using RestSharp;
 
 namespace AuthyClient
 {
-    public class AuthyClient
+    public class AuthyClient : IAuthyClient
     {
         private readonly string _apiKey;
         private readonly string _baseUrl;
