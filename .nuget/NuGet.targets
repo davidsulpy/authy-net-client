@@ -14,6 +14,8 @@
 
         <!-- Download NuGet.exe if it does not already exist -->
         <DownloadNuGetExe Condition=" '$(DownloadNuGetExe)' == '' ">false</DownloadNuGetExe>
+
+      <PackagesDir>$(SolutionDir)\packages</PackagesDir>
     </PropertyGroup>
 
     <ItemGroup Condition=" '$(PackageSources)' == '' ">
@@ -28,11 +30,13 @@
     <PropertyGroup Condition=" '$(OS)' == 'Windows_NT'">
         <!-- Windows specific commands -->
         <NuGetToolsPath>$([System.IO.Path]::Combine($(SolutionDir), ".nuget"))</NuGetToolsPath>
+        <PackagesConfig>$([System.IO.Path]::Combine($(ProjectDir), "packages.config"))</PackagesConfig>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(OS)' != 'Windows_NT'">
         <!-- We need to launch nuget.exe with the mono command if we're not on windows -->
         <NuGetToolsPath>$(SolutionDir).nuget</NuGetToolsPath>
+        <PackagesConfig>packages.config</PackagesConfig>
     </PropertyGroup>
 
     <PropertyGroup>
