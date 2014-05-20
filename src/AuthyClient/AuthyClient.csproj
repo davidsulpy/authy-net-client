@@ -47,6 +47,7 @@
     <Compile Include="AuthyClient.cs" />
     <Compile Include="AuthyClientException.cs" />
     <Compile Include="AuthyResponse.cs" />
+    <Compile Include="AuthyTokenResponse.cs" />
     <Compile Include="AuthyUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
