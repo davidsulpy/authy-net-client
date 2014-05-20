@@ -1,0 +1,18 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>Authy .NET Client</title>
+    <authors>David Sulpy</authors>
+    <owners>David Sulpy</owners>
+    <licenseUrl>https://raw.githubusercontent.com/davidsulpy/authy-net-client/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/davidsulpy/authy-net-client</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/davidsulpy/davidsulpy.github.io/source/images/logo_partial.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This package enables quicker consumption of Authy's two-factor authentication service in a .NET client by providing an easy to consume client api.</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>initialstate authy two-factir authentication</tags>
+  </metadata>
+</package>
