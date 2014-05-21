@@ -3,7 +3,7 @@ using Machine.Specifications;
 
 namespace AuthyClient.Specs
 {
-    public class when_creating_a_new_user_with_invalid_email_address : given_an_authy_client_sandbox_context
+    public class when_creating_a_new_user_with_invalid_phone_number_with_email_phone_overload : given_an_authy_client_sandbox_context
     {
         private static Exception _actualException;
 
@@ -11,12 +11,7 @@ namespace AuthyClient.Specs
                              {
                                  try
                                  {
-                                     AuthyClient.CreateAuthyUser(new AuthyUser
-                                                                 {
-                                                                     Cellphone = "555-555-5555",
-                                                                     Email = "invalid-email",
-                                                                     CountryCode = 1
-                                                                 });
+                                     AuthyClient.CreateAuthyUser("name@example.com", "AAA9-0247");
                                  }
                                  catch (Exception ex)
                                  {

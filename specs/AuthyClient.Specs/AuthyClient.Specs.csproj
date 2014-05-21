@@ -53,6 +53,8 @@
     <Compile Include="given_an_authy_client_sandbox_context.cs" />
     <Compile Include="when_creating_a_new_user_on_authy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="when_creating_a_new_user_on_authy_with_email_phone_overload.cs" />
+    <Compile Include="when_creating_a_new_user_with_invalid_phone_number_with_email_phone_overload.cs" />
     <Compile Include="when_creating_a_new_user_with_invalid_email_address.cs" />
     <Compile Include="when_creating_a_new_user_with_invalid_phone_number.cs" />
     <Compile Include="when_validating_a_user_token.cs" />

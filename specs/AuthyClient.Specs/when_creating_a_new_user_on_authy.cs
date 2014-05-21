@@ -10,8 +10,8 @@ namespace AuthyClient.Specs
 
         private Because of = () => _actualResult = AuthyClient.CreateAuthyUser(new AuthyUser
                                                                                 {
-                                                                                    Email = "david+test@sulpy.com",
-                                                                                    Cellphone = "615-669-0247",
+                                                                                    Email = "name@example.com",
+                                                                                    Cellphone = "555-555-5555",
                                                                                     CountryCode = 1
                                                                                 });
 

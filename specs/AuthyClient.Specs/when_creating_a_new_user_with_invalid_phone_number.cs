@@ -11,7 +11,7 @@ namespace AuthyClient.Specs
                              {
                                  try
                                  {
-                                     AuthyClient.CreateAuthyUser(new AuthyUser("david+test@sulpy.com", "AAA9-0247"));
+                                     AuthyClient.CreateAuthyUser(new AuthyUser("name@example.com", "AAA9-0247"));
                                  }
                                  catch (Exception ex)
                                  {

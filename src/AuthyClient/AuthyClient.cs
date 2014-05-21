@@ -24,6 +24,20 @@ namespace AuthyClient
             _baseUrl = string.Format("{0}.authy.com/protected/json/", testMode ? "http://sandbox-api" : "https://api");
         }
 
+
+        /// <summary>
+        /// Creates a user in your Authy account and returns the Authy User Id.
+        /// </summary>
+        /// <param name="email">Email address of user to setup.</param>
+        /// <param name="cellphone">Cellphone number of user to setup, should be unique to this user.</param>
+        /// <param name="countryCode">Default 1 (US), set to integer country code of cellphone.</param>
+        /// <returns>Returns an Authy User Id to store. This is necessary for authenticating a user's token later</returns>
+        /// <exception cref="AuthyClientException">Thrown when the Authy Api response is not HttpStatusCode 2xx</exception>
+        public string CreateAuthyUser(string email, string cellphone, int countryCode = 1)
+        {
+            return CreateAuthyUser(new AuthyUser(email, cellphone, countryCode));
+        }
+
         /// <summary>
         /// Creates a user in your Authy account and returns the Authy User Id.
         /// </summary>
