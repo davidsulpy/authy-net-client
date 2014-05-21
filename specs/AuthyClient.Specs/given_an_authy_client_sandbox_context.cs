@@ -9,7 +9,7 @@ namespace AuthyClient.Specs
 
         private Establish context = () =>
                                     {
-                                        AuthyClient = new AuthyClient("d57d919d11e6b221c9bf6f7c882028f9");
+                                        AuthyClient = new AuthyApiClient("d57d919d11e6b221c9bf6f7c882028f9");
                                     };
     }
 }

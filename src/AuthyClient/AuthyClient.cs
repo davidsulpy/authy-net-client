@@ -8,7 +8,7 @@ namespace AuthyClient
     /// Client to easily interface with the Authy HTTP API
     /// As documented here: http://docs.authy.com/
     /// </summary>
-    public class AuthyClient : IAuthyClient
+    public class AuthyApiClient : IAuthyClient
     {
         private readonly string _apiKey;
         private readonly string _baseUrl;
@@ -18,7 +18,7 @@ namespace AuthyClient
         /// </summary>
         /// <param name="apiKey">authy api key, retrieve from authy dashboard</param>
         /// <param name="testMode">defaults to true, determines wither to use api.authy or sandbox-api.authy urls</param>
-        public AuthyClient(string apiKey, bool testMode = true)
+        public AuthyApiClient(string apiKey, bool testMode = true)
         {
             _apiKey = apiKey;
             _baseUrl = string.Format("{0}.authy.com/protected/json/", testMode ? "http://sandbox-api" : "https://api");
