@@ -8,7 +8,7 @@
 
 ```
 //instantiate client
-var client = new AuthyClient("someapikey", testMode:false);
+var client = new AuthyApiClient("someapikey", testMode:false);
 
 // create an authy user
 var authyUserId = client.CreateAuthyUser("name@example.com", "555-555-5555");
