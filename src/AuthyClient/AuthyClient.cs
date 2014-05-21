@@ -4,17 +4,32 @@ using RestSharp;
 
 namespace AuthyClient
 {
+    /// <summary>
+    /// Client to easily interface with the Authy HTTP API
+    /// As documented here: http://docs.authy.com/
+    /// </summary>
     public class AuthyClient : IAuthyClient
     {
         private readonly string _apiKey;
         private readonly string _baseUrl;
 
+        /// <summary>
+        /// Construct an AuthyClient instance
+        /// </summary>
+        /// <param name="apiKey">authy api key, retrieve from authy dashboard</param>
+        /// <param name="testMode">defaults to true, determines wither to use api.authy or sandbox-api.authy urls</param>
         public AuthyClient(string apiKey, bool testMode = true)
         {
             _apiKey = apiKey;
             _baseUrl = string.Format("{0}.authy.com/protected/json/", testMode ? "http://sandbox-api" : "https://api");
         }
 
+        /// <summary>
+        /// Creates a user in your Authy account and returns the Authy User Id.
+        /// </summary>
+        /// <param name="request">This is a request object for all the parameters to send to Authy. Ignore Id as this get's set by Authy.</param>
+        /// <returns>Returns an Authy User Id to store. This is necessary for authenticating a user's token later</returns>
+        /// <exception cref="AuthyClientException">Thrown when the Authy Api response is not HttpStatusCode 2xx</exception>
         public string CreateAuthyUser(AuthyUser request)
         {
             var client = new RestClient(string.Format("{0}users/new?api_key={1}", _baseUrl, _apiKey));
@@ -42,6 +57,13 @@ namespace AuthyClient
             throw new AuthyClientException(response.Data.Message, response.Data.Errors);
         }
 
+        /// <summary>
+        /// Verify's a user's token with the Authy Api
+        /// </summary>
+        /// <param name="authyUserId">Authy User Id. This is the value returned from creating the Authy User.</param>
+        /// <param name="authyToken">This is the token that the user is providing for verification.</param>
+        /// <returns>boolean representing if the user is authenticated.</returns>
+        /// <exception cref="AuthyClientException">Thrown when the api response is not 200 (OK)</exception>
         public bool VerifyUserToken(string authyUserId, string authyToken)
         {
             var client =

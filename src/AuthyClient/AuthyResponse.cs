@@ -2,7 +2,7 @@
 
 namespace AuthyClient
 {
-    public class AuthyResponse
+    internal class AuthyResponse
     {
         public AuthyUser User { get; set; }
         public bool Success { get; set; }
