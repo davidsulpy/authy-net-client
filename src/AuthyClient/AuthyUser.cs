@@ -23,7 +23,7 @@
         /// <summary>
         /// UserId from Authy
         /// </summary>
-        internal string Id { get; set; }
+        public string Id { get; set; }
 
         /// <summary>
         /// Email address of user
