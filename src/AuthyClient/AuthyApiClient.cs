@@ -8,7 +8,7 @@ namespace AuthyClient
     /// Client to easily interface with the Authy HTTP API
     /// As documented here: http://docs.authy.com/
     /// </summary>
-    public class AuthyApiClient : IAuthyClient
+    public class AuthyApiClient : IAuthyApiClient
     {
         private readonly string _apiKey;
         private readonly string _baseUrl;
@@ -88,7 +88,6 @@ namespace AuthyClient
 
             var response = client.Execute<AuthyTokenResponse>(authyRequest);
 
-
             switch (response.StatusCode)
             {
                 case HttpStatusCode.OK:
@@ -104,10 +103,25 @@ namespace AuthyClient
                     }
                     else
                     {
-                        throw new AuthyClientException("Unexpected response: "+ response.Content, new Dictionary<string, string>());
+                        throw new AuthyClientException("Unexpected response: " + response.Content, new Dictionary<string, string>());
                     }
                 }
                     
+            }
+        }
+
+        public void SendSmsToken(string authyUserId, bool forceSend = false)
+        {
+            var client = new RestClient(string.Format("{0}sms/{1}?api_key={2}", _baseUrl, authyUserId, _apiKey));
+
+            var authyRequest = new RestRequest(Method.GET);
+            authyRequest.RequestFormat = DataFormat.Json;
+
+            var response = client.Execute<AuthySmsResponse>(authyRequest);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+            {
+                throw new AuthyClientException("Unexpected response: " + response.Content, new Dictionary<string, string>());
             }
         }
     }

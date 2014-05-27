@@ -45,10 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthyClient.cs" />
+    <Compile Include="AuthyApiClient.cs" />
     <Compile Include="AuthyClientException.cs" />
-    <Compile Include="AuthyResponse.cs" />
-    <Compile Include="AuthyTokenResponse.cs" />
+    <Compile Include="AuthyResponseModels\AuthyResponse.cs" />
+    <Compile Include="AuthyResponseModels\AuthySmsResponse.cs" />
+    <Compile Include="AuthyResponseModels\AuthyTokenResponse.cs" />
     <Compile Include="AuthyUser.cs" />
     <Compile Include="IAuthyClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

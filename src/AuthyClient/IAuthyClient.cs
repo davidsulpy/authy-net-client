@@ -1,6 +1,6 @@
 namespace AuthyClient
 {
-    public interface IAuthyClient
+    public interface IAuthyApiClient
     {
         /// <summary>
         /// Creates a user in your Authy account and returns the Authy User Id.
@@ -28,5 +28,12 @@ namespace AuthyClient
         /// <returns>boolean representing if the user is authenticated.</returns>
         /// <exception cref="AuthyClientException">Thrown when the api response is not 200 (OK)</exception>
         bool VerifyUserToken(string authyUserId, string authyToken);
+
+        /// <summary>
+        /// Send an Sms token for a user
+        /// </summary>
+        /// <param name="authyUserId">Authy User Id. This is the value returned from creating the Authy User.</param>
+        /// <param name="forceSend">Optional parameter. Default false. Set to true to force an SMS token to be sent regardless of wether or not a user has the authy app setup.</param>
+        void SendSmsToken(string authyUserId, bool forceSend = false);
     }
 }

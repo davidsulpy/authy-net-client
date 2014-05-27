@@ -4,7 +4,7 @@ namespace AuthyClient.Specs
 {
     public class given_an_authy_client_sandbox_context
     {
-        protected static IAuthyClient AuthyClient;
+        protected static IAuthyApiClient AuthyClient;
         protected const string ValidTestAuthyToken = "0000000";
 
         private Establish context = () =>

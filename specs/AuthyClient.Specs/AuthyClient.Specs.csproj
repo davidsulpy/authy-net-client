@@ -57,6 +57,7 @@
     <Compile Include="when_creating_a_new_user_with_invalid_phone_number_with_email_phone_overload.cs" />
     <Compile Include="when_creating_a_new_user_with_invalid_email_address.cs" />
     <Compile Include="when_creating_a_new_user_with_invalid_phone_number.cs" />
+    <Compile Include="when_sending_an_sms_token.cs" />
     <Compile Include="when_validating_a_user_token.cs" />
     <Compile Include="when_validating_a_user_token_thats_invalid.cs" />
   </ItemGroup>
