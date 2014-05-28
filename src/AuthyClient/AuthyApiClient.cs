@@ -76,12 +76,13 @@ namespace AuthyClient
         /// </summary>
         /// <param name="authyUserId">Authy User Id. This is the value returned from creating the Authy User.</param>
         /// <param name="authyToken">This is the token that the user is providing for verification.</param>
+        /// <param name="force">This dictates wether or not to force verification of a token regardless of registration status.</param>
         /// <returns>boolean representing if the user is authenticated.</returns>
         /// <exception cref="AuthyClientException">Thrown when the api response is not 200 (OK)</exception>
-        public bool VerifyUserToken(string authyUserId, string authyToken)
+        public bool VerifyUserToken(string authyUserId, string authyToken, bool force = true)
         {
             var client =
-                new RestClient(string.Format("{0}verify/{1}/{2}?api_key={3}", _baseUrl, authyToken, authyUserId, _apiKey));
+                new RestClient(string.Format("{0}verify/{1}/{2}?api_key={3}&force={4}", _baseUrl, authyToken, authyUserId, _apiKey, force));
 
             var authyRequest = new RestRequest(Method.GET);
             authyRequest.RequestFormat = DataFormat.Json;
