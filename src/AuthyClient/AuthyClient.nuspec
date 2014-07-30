@@ -6,7 +6,7 @@
     <title>Authy .NET Client</title>
     <authors>David Sulpy</authors>
     <owners>David Sulpy</owners>
-    <licenseUrl>https://raw.githubusercontent.com/davidsulpy/authy-net-client/master/LICENSE.txt</licenseUrl>
+    <licenseUrl>https://raw.githubusercontent.com/davidsulpy/authy-net-client/master/AuthyClient_LICENSE.txt</licenseUrl>
     <projectUrl>https://github.com/davidsulpy/authy-net-client</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/davidsulpy/davidsulpy.github.io/source/images/logo_partial.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

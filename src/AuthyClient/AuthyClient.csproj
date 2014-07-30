@@ -62,8 +62,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\..\LICENSE.txt">
-      <Link>LICENSE.txt</Link>
+    <Content Include="..\..\AuthyClient_LICENSE.txt">
+      <Link>AuthyClient_LICENSE.txt</Link>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
