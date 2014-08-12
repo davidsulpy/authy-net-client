@@ -113,7 +113,7 @@ namespace AuthyClient
 
         public void SendSmsToken(string authyUserId, bool forceSend = false)
         {
-            var client = new RestClient(string.Format("{0}sms/{1}?api_key={2}", _baseUrl, authyUserId, _apiKey));
+            var client = new RestClient(string.Format("{0}sms/{1}?api_key={2}&force={3}", _baseUrl, authyUserId, _apiKey, forceSend));
 
             var authyRequest = new RestRequest(Method.GET);
             authyRequest.RequestFormat = DataFormat.Json;
