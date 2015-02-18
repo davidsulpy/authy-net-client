@@ -14,7 +14,7 @@ namespace AuthyClient.Specs
                              {
                                  try
                                  {
-                                     AuthyClient.SendSmsToken("1");
+                                     AuthyClient.SendToken("1");
                                  }
                                  catch (Exception ex)
                                  {

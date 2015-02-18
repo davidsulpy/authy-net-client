@@ -34,7 +34,7 @@ namespace AuthyClient
         /// Send an Sms token for a user
         /// </summary>
         /// <param name="authyUserId">Authy User Id. This is the value returned from creating the Authy User.</param>
-        /// <param name="forceSend">Optional parameter. Default false. Set to true to force an SMS token to be sent regardless of wether or not a user has the authy app setup.</param>
-        void SendSmsToken(string authyUserId, bool forceSend = false);
+        /// <param name="forceSmsSend">Optional parameter. Default false. Set to true to force an SMS token to be sent regardless of wether or not a user has the authy app setup.</param>
+        void SendToken(string authyUserId, bool forceSmsSend = false);
     }
 }
