@@ -12,7 +12,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>This package enables quicker consumption of Authy's two-factor authentication service in a .NET client by providing an easy to consume client api.</description>
     <releaseNotes></releaseNotes>
-    <copyright>Copyright 2014</copyright>
+    <copyright>Copyright 2015</copyright>
     <tags>initialstate authy two-factor authentication</tags>
   </metadata>
 </package>
