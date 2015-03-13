@@ -59,7 +59,9 @@
     <Compile Include="when_creating_a_new_user_with_invalid_phone_number.cs" />
     <Compile Include="when_sending_an_sms_token_without_force.cs" />
     <Compile Include="when_validating_a_user_token.cs" />
+    <Compile Include="when_validating_a_user_token_for_user_id_with_non_digits.cs" />
     <Compile Include="when_validating_a_user_token_thats_invalid.cs" />
+    <Compile Include="when_validating_a_user_token_that_has_non_digits.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
