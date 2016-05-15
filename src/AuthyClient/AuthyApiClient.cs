@@ -102,6 +102,8 @@ namespace AuthyClient
                 case HttpStatusCode.Unauthorized:
                 case HttpStatusCode.Forbidden:
                     return false;
+                case HttpStatusCode.InternalServerError:
+                    throw new AuthyClientException("Authy 500 ISE", new Dictionary<string, string>());
                 default:
                 {
                     if (response.Data != null)
