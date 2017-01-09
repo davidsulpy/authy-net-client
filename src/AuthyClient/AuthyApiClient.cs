@@ -22,7 +22,7 @@ namespace AuthyClient
         public AuthyApiClient(string apiKey, bool testMode = true)
         {
             _apiKey = apiKey;
-            _baseUrl = string.Format("{0}.authy.com/protected/json/", testMode ? "http://sandbox-api" : "https://api");
+            _baseUrl = $"{(testMode ? "http://sandbox-api" : "https://api")}.authy.com/protected/json/";
         }
 
 
@@ -49,7 +49,7 @@ namespace AuthyClient
         /// <exception cref="AuthyClientException">Thrown when the Authy Api response is not HttpStatusCode 2xx</exception>
         public string CreateAuthyUser(AuthyUser request)
         {
-            var client = new RestClient(string.Format("{0}users/new?api_key={1}", _baseUrl, _apiKey));
+            var client = new RestClient($"{_baseUrl}users/new?api_key={_apiKey}");
 
             var authyRequest = new RestRequest(Method.POST);
             authyRequest.RequestFormat = DataFormat.Json;
@@ -71,7 +71,7 @@ namespace AuthyClient
                 return response.Data.User.Id;
             }
 
-            throw new AuthyClientException(response.Data.Message, response.Data.Errors);
+            throw new AuthyClientException(response.Data.Message, response.Data.Errors, response.StatusCode);
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace AuthyClient
                 return false;
 
             var client =
-                new RestClient(string.Format("{0}verify/{1}/{2}?api_key={3}&force={4}", _baseUrl, authyToken, authyUserId, _apiKey, force));
+                new RestClient($"{_baseUrl}verify/{authyToken}/{authyUserId}?api_key={_apiKey}&force={force}");
 
             var authyRequest = new RestRequest(Method.GET);
             authyRequest.RequestFormat = DataFormat.Json;
@@ -103,16 +103,16 @@ namespace AuthyClient
                 case HttpStatusCode.Forbidden:
                     return false;
                 case HttpStatusCode.InternalServerError:
-                    throw new AuthyClientException("Authy 500 ISE", new Dictionary<string, string>());
+                    throw new AuthyClientException("Authy 500 ISE", new Dictionary<string, string>(), response.StatusCode);
                 default:
                 {
                     if (response.Data != null)
                     {
-                        throw new AuthyClientException(response.Data.Token, response.Data.Errors);
+                        throw new AuthyClientException(response.Data.Token, response.Data.Errors, response.StatusCode);
                     }
                     else
                     {
-                        throw new AuthyClientException("Unexpected response: " + response.Content, new Dictionary<string, string>());
+                        throw new AuthyClientException("Unexpected response: " + response.Content, new Dictionary<string, string>(), response.StatusCode);
                     }
                 }
                     
@@ -131,7 +131,7 @@ namespace AuthyClient
             if (!NumberIsValid(authyUserId))
                 throw new AuthyClientException("AuthyUseId is expected to be digits only, but was: " + authyUserId, new Dictionary<string, string>());
 
-            var client = new RestClient(string.Format("{0}sms/{1}?api_key={2}&force={3}", _baseUrl, authyUserId, _apiKey, forceSmsSend));
+            var client = new RestClient($"{_baseUrl}sms/{authyUserId}?api_key={_apiKey}&force={forceSmsSend}");
 
             var authyRequest = new RestRequest(Method.GET);
             authyRequest.RequestFormat = DataFormat.Json;
@@ -140,7 +140,7 @@ namespace AuthyClient
 
             if (response.StatusCode != HttpStatusCode.OK)
             {
-                throw new AuthyClientException("Unexpected response: " + response.Content, new Dictionary<string, string>());
+                throw new AuthyClientException("Unexpected response: " + response.Content, new Dictionary<string, string>(), response.StatusCode);
             }
         }
 
