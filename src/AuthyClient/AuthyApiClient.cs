@@ -112,7 +112,7 @@ namespace AuthyClient
                     }
                     else
                     {
-                        throw new AuthyClientException("Unexpected response: " + response.Content, new Dictionary<string, string>(), response.StatusCode);
+                        throw new AuthyClientException($"Unexpected response: {response.Content} httpCode: {response.StatusCode}", new Dictionary<string, string>(), response.StatusCode);
                     }
                 }
                     
@@ -140,7 +140,7 @@ namespace AuthyClient
 
             if (response.StatusCode != HttpStatusCode.OK)
             {
-                throw new AuthyClientException("Unexpected response: " + response.Content, new Dictionary<string, string>(), response.StatusCode);
+                throw new AuthyClientException($"Unexpected response: {response.Content} httpCode: {response.StatusCode}", new Dictionary<string, string>(), response.StatusCode);
             }
         }
 
