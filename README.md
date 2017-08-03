@@ -5,9 +5,9 @@ Authy .NET Client
 C# .Net Client for using [Authy's](https://www.authy.com/) [API](http://docs.authy.com/)
 
 
-##Installation
+## Installation
 
-###NuGet
+### NuGet
 This package is available via NuGet as `authy-net-client`.
 
 ```powershell
@@ -15,29 +15,29 @@ This package is available via NuGet as `authy-net-client`.
 ```
 
 
-##Example usage
+## Example usage
 The library is intended to be super easy to use and friendly with IoC frameworks.
 
-####Instantiating a client
+#### Instantiating a client
 
 ```csharp
 IAuthyApiClient client = new AuthyApiClient("someapikey", testMode:false);
 ```
-####Creating an Authy User
+#### Creating an Authy User
 ```csharp
 string authyUserId = client.CreateAuthyUser("name@example.com", "555-555-5555");
 ```
 
-####Verify a user provided token
+#### Verify a user provided token
 ```csharp
 bool isValid = client.VerifyUserToken(authyUserId, someToken);
 ```
 
 
-##Testing
+## Testing
 This package contains [mspec](https://github.com/machine/machine.specifications) specs that outline happy-paths and edgecases. They are intended to read like behaviors and should be a good way to reference how to use the library as well.
 
-##Contributing
+## Contributing
 This library is open for contribution here are the steps to contrubte:
 
 1. [Fork Repo](https://github.com/davidsulpy/authy-net-client#fork-destination-box)
