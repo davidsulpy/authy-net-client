@@ -9,10 +9,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AuthyClient.Specs</RootNamespace>
     <AssemblyName>AuthyClient.Specs</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,13 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Machine.Specifications, Version=0.11.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Machine.Specifications.0.11.0\lib\net45\Machine.Specifications.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Machine.Specifications, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Machine.Specifications.1.0.0\lib\net45\Machine.Specifications.dll</HintPath>
     </Reference>
-    <Reference Include="Machine.Specifications.Should, Version=0.11.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Machine.Specifications.Should.0.11.0\lib\net45\Machine.Specifications.Should.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Machine.Specifications.Should, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Machine.Specifications.Should.1.0.0\lib\net45\Machine.Specifications.Should.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
