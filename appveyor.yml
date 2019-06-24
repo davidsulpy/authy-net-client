@@ -12,7 +12,7 @@ before_build:
   - ps: nuget restore
     
 build:
-  project: InitialStateClient.sln
+  project: AuthyClient.sln
   verbosity: minimal
   publish_nuget: true
 
