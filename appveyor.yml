@@ -1,0 +1,35 @@
+version: 1.1.{build}
+
+environment:
+  my_variable:
+    secure: I9kBWnQq0955ipQxbZMkQh9YGODXiDEve8GzbFDLLIi1fBFyPnmo/NJhNTjnh1ck
+
+branches:
+  only:
+    - master
+
+before_build:
+  - ps: nuget restore
+    
+build:
+  project: InitialStateClient.sln
+  verbosity: minimal
+  publish_nuget: true
+
+assembly_info:
+  patch: true
+  file: 'src\**\AssemblyInfo.cs'
+  assembly_version: "{version}.0"
+  assembly_file_version: "{version}.0"
+  assembly_informational_version: "{version}"
+
+test:
+  assemblies:
+    - '**\*.Specs.dll'
+
+deploy:
+  provider: NuGet
+  #server:
+  api_key:
+    secure: I9kBWnQq0955ipQxbZMkQh9YGODXiDEve8GzbFDLLIi1fBFyPnmo/NJhNTjnh1ck
+  skip_symbols: true
