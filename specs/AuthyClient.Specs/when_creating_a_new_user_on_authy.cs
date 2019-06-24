@@ -15,6 +15,7 @@ namespace AuthyClient.Specs
                                                                                     CountryCode = 1
                                                                                 });
 
-        private It should_return_a_user_with_authy_user_id = () => _actualResult.ShouldNotBeEmpty();
+	    [Ignore("This spec will fail without a real authy api key")]
+		private It should_return_a_user_with_authy_user_id = () => _actualResult.ShouldNotBeEmpty();
     }
 }

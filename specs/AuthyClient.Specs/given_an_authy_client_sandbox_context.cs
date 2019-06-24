@@ -9,6 +9,8 @@ namespace AuthyClient.Specs
 
         private Establish context = () =>
                                     {
+										// NOTE: must replace with real Authy Api Key in order to run these tests since
+										// authy discontinued the sandbox api
                                         AuthyClient = new AuthyApiClient("d57d919d11e6b221c9bf6f7c882028f9");
                                     };
     }
