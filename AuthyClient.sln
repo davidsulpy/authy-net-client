@@ -1,17 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthyClient", "src\AuthyClient\AuthyClient.csproj", "{6A031212-D8DA-41F5-9850-4FD1254BC0BD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthyClient.Specs", "specs\AuthyClient.Specs\AuthyClient.Specs.csproj", "{1DFE9640-DF7A-4A1A-9234-302B64327E99}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{346A5054-30BB-4107-B62D-6D0387564013}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ECE2F6B1-E583-4399-AC2D-5C6692B43081}"
 	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
+		appveyor.yml = appveyor.yml
 	EndProjectSection
 EndProject
 Global
