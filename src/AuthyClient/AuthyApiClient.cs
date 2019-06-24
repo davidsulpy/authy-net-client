@@ -22,7 +22,7 @@ namespace AuthyClient
         public AuthyApiClient(string apiKey, bool testMode = true)
         {
             _apiKey = apiKey;
-            _baseUrl = $"{(testMode ? "http://sandbox-api" : "https://api")}.authy.com/protected/json/";
+            _baseUrl = "https://api.authy.com/protected/json/";
         }
 
 
