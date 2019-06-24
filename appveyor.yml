@@ -4,6 +4,8 @@ environment:
   my_variable:
     secure: I9kBWnQq0955ipQxbZMkQh9YGODXiDEve8GzbFDLLIi1fBFyPnmo/NJhNTjnh1ck
 
+image: Visual Studio 2017
+
 branches:
   only:
     - master
